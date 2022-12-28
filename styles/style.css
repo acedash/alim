@@ -1,0 +1,513 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;1,100&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  /* #ffd302 */
+}
+html {
+  font-family: "poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  color: #555;
+  overflow-x: hidden;
+}
+/* REUSABLE */
+.row {
+  width: 100%;
+  padding: 0 100px;
+  margin: 0 auto;
+}
+.btn,
+input[type="submit"] {
+  display: inline-block;
+  background-color: #f1c40f;
+  padding: 8px 30px;
+  transition: background-color 0.2s, color 0.2, border 0.2;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 200px;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+  color: #555;
+}
+section {
+  padding: 80px 0;
+}
+section h1 {
+  font-size: 40px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 50px;
+}
+section h1:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100px;
+  margin: 0 auto;
+  background: #f1c40f;
+  margin-top: 30px;
+}
+footer h3:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 30px;
+  background: #f1c40f;
+  margin-top: 3px;
+}
+section h1 span {
+  color: #f1c40f;
+}
+li {
+  list-style: none;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-height: 110px;
+  padding-top: 5px;
+}
+.logo_container img {
+  width: 100px;
+  height: 90px;
+  border-radius: 15px;
+  /* margin: 5px 0; */
+  margin-left: 8px;
+}
+.main_nav {
+  display: flex;
+}
+.main_nav li {
+  display: inline-block;
+  list-style: none;
+  /* margin: 0 20px; */
+}
+.main_nav li a {
+  display: block;
+  padding: 15px;
+  margin: 0 10px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  color: #aaa;
+  position: relative;
+  z-index: 1;
+}
+.main_nav li a,
+.main_nav li a:after,
+.main_nav li a:before {
+  transition: all 0.5s;
+}
+.main_nav li a:active,
+.main_nav li a:hover {
+  color: #91640f;
+}
+.main_nav li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: ".";
+  color: transparent;
+  background: #f1c40f;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+.main_nav li a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+/* mobile nav */
+.icon {
+  font-size: 36px;
+  margin-right: 20px;
+  cursor: pointer;
+  display: none;
+}
+/* HERO SECTION */
+.hero_section {
+  position: relative;
+  height: 660px;
+  /* width: 100vw; */
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/doctors-face-mask-hospital.webp);
+  background-position: center;
+  background-size: cover;
+  /* z-index: 2; */
+}
+/* #e3e3e1 */
+.hero_img {
+  position: absolute;
+  left: 58%;
+  top: 24%;
+  /* width: 700px;
+  height: 450px; */
+  /* width: 700px;
+  height: 500px; */
+}
+.hero_img_content {
+  position: relative;
+  top: 300px;
+  left: 60px;
+}
+.hero_img_content h1 {
+  position: relative;
+  font-size: 54px;
+  z-index: 2;
+  display: inline-block;
+  color: #ffd302;
+  /* width: 100%; */
+}
+.hero_img_content .punch_line::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.hero_img_content .punch_line:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.hero_img_content .punch_line::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background: #f1c40f;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+.contact_btn {
+  color: #000;
+  border: 1px solid #f1c40f;
+  outline: none;
+  letter-spacing: 2px;
+  /* font-size: 16px; */
+  transition: all 0.35s;
+  margin-top: 20px;
+}
+.contact_btn:hover {
+  background-color: #f3d337;
+  outline: none;
+}
+.contact_btn a span {
+  position: relative;
+  z-index: 2;
+}
+
+.contact_btn:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #f1c40f;
+  transition: all 0.35s;
+}
+
+/************************************************************** courses row */
+.courses_section {
+  width: 100%;
+  background-color: #fff;
+}
+.courses_row {
+  display: flex;
+  margin: 20px 0;
+  width: 100%;
+}
+.course {
+  width: 25%;
+  margin: 0 10px;
+}
+.course img {
+  width: 100%;
+  height: 200px;
+}
+.course h3 {
+  text-align: center;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: #f1c40f;
+  font-size: 22px;
+  color: #000;
+}
+.responsive {
+  display: inline-block;
+  width: 100%;
+}
+/* COUNTRIES SECTION */
+.countries_section {
+  background-color: #f4f4f4;
+}
+.countries_list {
+  display: flex;
+  width: 100%;
+  /* margin: 60px 0; */
+}
+.country {
+  width: 25%;
+  height: 300px;
+  margin-right: 30px;
+}
+/* .country:last-child{
+  margin-right: 0;
+} */
+.country img {
+  width: 100%;
+  height: 250px;
+  border: solid 4px #f1c40f;
+}
+.city-features {
+  color: #f1c40f;
+  font-weight: 400;
+}
+/* testmonial */
+.testmonial_section {
+  /* height: 100vh; */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(img/doctors-face-mask-hospital.webp);
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.testmonial_row div {
+  width: 80%;
+  margin: 0 auto;
+  /* text-align:center; */
+}
+.testmonial p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+.testmonial h4 {
+  color: #f1c40f;
+  font-weight: 400;
+}
+
+/* contact form */
+.contact_section {
+  /* height: 70vh; */
+  background-color: white;
+}
+.conatct_form {
+  width: 60%;
+  margin-top: 20px;
+}
+input[type="name"],
+input[type="email"],
+input[type="number"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+}
+.submit_btn {
+  border: none;
+  text-align: center;
+  margin: 0% auto;
+}
+
+/************************************************************************** footer */
+footer {
+  background-color: #333;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 60px 0;
+}
+.footer_nav {
+  display: flex;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+.footer_nav div {
+  width: 50%;
+  margin-right: 20px;
+}
+.footer_nav div:last-child {
+  margin-right: 0px;
+}
+.footer_nav div h3 {
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+.social_media a {
+  padding: 10px;
+}
+.social_media a:first-child {
+  padding-left: 0;
+}
+.social_media a:hover {
+  color: #fe4c50;
+}
+/*************************************************************** RESPONSIVE */
+@media only screen and (max-width: 1200px) {
+  .hero_img_content h1 {
+    font-size: 48px;
+  }
+  .hero_img_content {
+    left: 60px;
+  }
+  .row {
+    padding: 0 30px;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .hero_img_content h1 {
+    font-size: 46px;
+  }
+  .hero_img_content {
+    left: 40px;
+  }
+  .hero_img {
+    height: 460px;
+    width: 660px;
+  }
+  .row {
+    padding: 0 10px;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .hero_img {
+    height: 410px;
+    width: 610px;
+    top: 30%;
+  }
+  .hero_img_content {
+    left: 20px;
+  }
+  .hero_img_content h1 {
+    font-size: 42px;
+  }
+  section h1 {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+  .course {
+    width: 100%;
+    margin: 0 1px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .hero_img {
+    /* top:38%; */
+    height: 340px;
+    width: 500px;
+  }
+  .hero_img_content {
+    left: 10px;
+  }
+  .hero_img_content h1 {
+    font-size: 36px;
+  }
+  .logo_container img {
+    width: 80px;
+    height: 75px;
+  }
+  .main_nav {
+    display: none;
+  }
+  .icon {
+    display: block;
+  }
+  .course {
+    width: 25%;
+    margin: 0 1px;
+  }
+  .row {
+    padding: 0 5px;
+  }
+}
+@media only screen and (max-width: 730px) {
+  .hero_section {
+    height: 500px;
+  }
+  .hero_img {
+    top: 20%;
+    left: 53%;
+  }
+  .hero_img_content {
+    top: 40%;
+  }
+  .hero_img_content h1 {
+    font-size: 32px;
+  }
+  .contact_btn {
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 8px 20px;
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .hero_section {
+    height: 450px;
+  }
+  .hero_img {
+    display: none;
+  }
+  .hero_img_content h1 {
+    font-size: 30px;
+  }
+  .contact_btn {
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+  .courses_row {
+    display: inline-block;
+  }
+  .course {
+    display: block;
+    width: 70%;
+    margin: 15px auto;
+  }
+  .footer_nav {
+    display: inline-block;
+  }
+  .footer_nav div {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  @media only screen and (max-width: 480px) {
+    .hero_img_content {
+      top: 28%;
+    }
+    .contact_btn {
+      letter-spacing: 1px;
+      padding: 6px 18px;
+      margin-top: 5px;
+    }
+  }
+}
